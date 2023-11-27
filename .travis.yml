@@ -11,14 +11,14 @@ script:
   - docker run -e CI=true youss/react-test npm test
 
 after_success:
-  - docker build -t youss/multi-client ./client
-  - docker build -t youss/multi-nginx ./nginx
-  - docker build -t youss/multi-server ./server
-  - docker build -t youss/multi-worker ./worker
+  - docker build -t youatt/multi-client ./client
+  - docker build -t youatt/multi-nginx ./nginx
+  - docker build -t youatt/multi-server ./server
+  - docker build -t youatt/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push youss/multi-client
-  - docker push youss/multi-nginx
-  - docker push youss/multi-server
-  - docker push youss/multi-worker
+  - docker push youatt/multi-client
+  - docker push youatt/multi-nginx
+  - docker push youatt/multi-server
+  - docker push youatt/multi-worker
