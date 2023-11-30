@@ -4,7 +4,7 @@ services:
     image: 'youatt/multi-client'
     mem_limit: 128m
     hostname: client
-  api:
+  server:
     image: 'youatt/multi-server'
     mem_limit: 128m
     hostname: api
